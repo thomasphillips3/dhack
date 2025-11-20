@@ -1,0 +1,16 @@
+# Core requirements (minimal installation)
+pillow>=10.0.0
+exifread>=3.0.0
+numpy>=1.24.0
+
+# Optional but recommended (for CNN features and visualization)
+tensorflow>=2.13.0
+opencv-python>=4.8.0
+matplotlib>=3.7.0
+
+# For web interface (optional extension)
+# streamlit>=1.28.0
+
+# Development tools (optional)
+# jupyter>=1.0.0
+# ipython>=8.12.0
