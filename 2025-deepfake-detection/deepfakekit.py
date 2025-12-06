@@ -20,6 +20,7 @@ import os
 import io
 import math
 import json
+import re
 from dataclasses import dataclass
 from typing import Any, Dict, Optional, Tuple, List
 
@@ -122,7 +123,7 @@ class DeepfakeKit:
             flags['missing_camera'] = True
 
         ai_keywords = ['ai', 'generated', 'stable diffusion', 'midjourney', 'dalle', 'gemini']
-        if any(kw in joined for kw in ai_keywords):
+        if any(re.search(rf'\b{kw}\b', joined) for kw in ai_keywords):
             flags['has_ai_generator_hint'] = True
 
         return MetadataResult(tags=tags, flags=flags)
